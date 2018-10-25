@@ -10,23 +10,17 @@ os.system("figlet Comment")
 msg = input("Message: ")
 token = input("Token: ")
 id = input("Id Post: ")
-n = 0
 
 def main():
     os.system("clear && figlet Comment")
     print("[1] 10 Comment\n" + "[2] 100 Comment\n" + "[3] 500 Comment")
     main = input("Enter Number: ")
     os.system("clear && figlet Start")
-    if main == "1":
-        n = 10
-    elif main == "2":
-        n = 100
-    elif main == "3":
-        n = 500
-    else:
+    n = 10 if main == "1" else 100 if main == "2" else 500 if main == "3" else 0
+    if n == 0:
         os.system("clear && figlet Wrong!")
         time.sleep(0.5)
-        os.system("python3 main.py")
+        os.system("python3 main.py") 
     flood(n)
 
 def flood(n):
