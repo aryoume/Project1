@@ -17,9 +17,16 @@ https://www.python.org/downloads/release/python-371/
 
 ___
 
-## How to use
+## Run
 ```cmd
 git clone https://github.com/aryoume/Project1.git
 cd Project1
 python3 main.py
+```
+
+## วิธีใช้
+```
+Message : ใส่ข้อความ ห้ามวรรค ห้ามภาษาไทย.
+Token : ใส่ Token
+ID : Post ID
 ```
