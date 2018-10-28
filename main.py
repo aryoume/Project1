@@ -1,4 +1,5 @@
 import urllib.request
+import urllib.parse
 import os
 import time
 import ssl
@@ -25,7 +26,7 @@ def main():
 
 def flood(n):
     for i in range(n):
-        urllib.request.urlopen(" https://graph.facebook.com/" + id + "/comments?message=" + msg +"&method=post&access_token=" + token)
+        urllib.request.urlopen(" https://graph.facebook.com/" + id + "/comments?message=" + urllib.parse.quote_plus(msg) +"&method=post&access_token=" + token)
     print("Done")
 
 if __name__ == "__main__":
