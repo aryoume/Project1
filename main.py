@@ -1,6 +1,8 @@
 import urllib.request
 import os
 import time
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 os.system("clear && figlet ARYouMe")
 os.system("figlet Comment")
@@ -8,42 +10,25 @@ os.system("figlet Comment")
 msg = input("Message: ")
 token = input("Token: ")
 id = input("Id Post: ")
+
 def main():
-   os.system("clear && figlet Comment")
-   print("[1] 10 Comment")
-   print("[2] 100 Comment")
-   print("[3] 500 Comment")
-   print(" ")
-   main = input("Enter Number: ")
-   if main == "1":
-      os.system("clear && figlet Start")
-      one()
-   elif main == "2":
-      os.system("clear && figlet Start")
-      two()
-   elif main == "3":
-      os.system("clear && figlet Start")
-      three()
-   else:
-      os.system("clear && figlet Wrong!")
-      time.sleep(0.5)
-      os.system("python3 main.py")
-def one():
-   i = 1
-   while i <= 10:
-    urllib.request.urlopen(" https://graph.facebook.com/" + id + "/comments?message=" + msg +"&method=post&access_token=" + token)
+    os.system("clear && figlet Comment")
+    print("[1] 10 Comment\n" + "[2] 100 Comment\n" + "[3] 500 Comment")
+    main = input("Enter Number: ")
+    os.system("clear && figlet Start")
+    n = 10 if main == "1" else 100 if main == "2" else 500 if main == "3" else 0
+    if n == 0:
+        os.system("clear && figlet Wrong!")
+        time.sleep(0.5)
+        os.system("python3 main.py") 
+    flood(n)
+
+def flood(n):
+    for i in range(n):
+        urllib.request.urlopen(" https://graph.facebook.com/" + id + "/comments?message=" + msg +"&method=post&access_token=" + token)
     print("Done")
-    i = i + 1
-def two():
-   i = 1
-   while i <= 100:
-    urllib.request.urlopen(" https://graph.facebook.com/" + id + "/comments?message=" + msg +"&method=post&access_token=" + token)
-    print("Done")
-    i = i + 1
-def three():
-   i = 1
-   while i <= 500:
-    urllib.request.urlopen(" https://graph.facebook.com/" + id + "/comments?message=" + msg +"&method=post&access_token=" + token)
-    print("Done")
-    i = i + 1
-main()
+
+if __name__ == "__main__":
+    main()
+
+    
