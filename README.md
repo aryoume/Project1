@@ -26,7 +26,7 @@ python3 main.py
 
 ## วิธีใช้
 ```
-Message : ใส่ข้อความ ห้ามวรรค ห้ามภาษาไทย.
+Message : ใส่ข้อความ วรรคได้ ไทยได้
 Token : ใส่ Token
 ID : Post ID
 ```
